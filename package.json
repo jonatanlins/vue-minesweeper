@@ -1,7 +1,7 @@
 {
   "name": "minesweeper",
   "version": "1.0.0",
-  "description": "Réplica de campo minado feita em menos de 24 horas",
+  "description": "Réplica do jogo campo minado",
   "author": "Jonatan Lins <https://jonatanlins.com>",
   "private": true,
   "scripts": {
@@ -26,6 +26,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.0.0",
+    "fs": "^0.0.1-security",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.3",
     "stylus": "^0.54.5",

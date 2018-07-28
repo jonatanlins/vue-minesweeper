@@ -1,6 +1,6 @@
 # minesweeper
 
-> Réplica de campo minado feita em menos de 24 horas
+> Réplica do jogo campo minado
 
 ## Comandos de terminal
 

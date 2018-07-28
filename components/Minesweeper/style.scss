@@ -1,0 +1,31 @@
+.game-table {}
+
+.square-button,
+.square-bomb,
+.square-number {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+.square-bomb {
+  background-color: red;
+}
+
+.reset-button {
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 2px;
+
+  &:before {
+    content: ':)'
+  }
+  
+  &.game-over {
+    color: red;
+  
+    &:before {
+      content: ':('
+    }
+  }
+}
