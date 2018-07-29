@@ -114,6 +114,8 @@ export default {
       this.gameOver = true
     },
     reset() {
+      clearInterval(this.timer)
+      this.time = 0
       this.squares = this.squares.map(row => row.map(() => ({
         value: 0,
         state: 'closed'
