@@ -1,12 +1,9 @@
 <template>
-  <div class="game-table">
+  <div class="game-table" @click.right.prevent="() => {}">
     <div class="header">
-      <span>{{ bombs }}</span>
-      <button
-        :class="{ 'reset-button': true, 'game-over': gameOver }"
-        @click="reset"
-      />
-      <span>{{ time }}</span>
+      <span class="bombs"><i/>{{ bombs }}</span>
+      <button class="reset-button" @click="reset"> RESET </button>
+      <span class="time">{{ formattedTime }}<i/></span>
     </div>
 
     <div class="grid">
@@ -20,6 +17,8 @@
         />
       </div>
     </div>
+
+    <div :class="{ 'game-status': true, gameOver, winner }"/>
   </div>
 </template>
 
@@ -31,10 +30,17 @@ export default {
     timer: null,
     squares: Array(16).fill(Array(30).fill({ state: 'closed' })),
     started: false,
-    gameOver: false
+    gameOver: false,
+    points: 0,
+    winner: false
   }),
   mounted () {
     this.reset()
+  },
+  computed: {
+    formattedTime () {
+      return `${Math.floor(this.time / 60)}:${('0' + (this.time % 60)).slice(-2)}`
+    }
   },
   methods: {
     start (startX, startY) {
@@ -82,8 +88,10 @@ export default {
       if (this.started) {
         if (this.squares[y][x].state === 'closed') {
           this.squares[y][x].state = 'flag'
+          this.bombs--
         } else if (this.squares[y][x].state === 'flag') {
           this.squares[y][x].state = 'closed'
+          this.bombs++
         }
       }
     },
@@ -104,14 +112,20 @@ export default {
       }
       open(x, y)
 
-      if (this.squares[y][x].value === 'bomb') {
-        this.end()
-      }
+      if (this.squares[y][x].value === 'bomb') this.end()
+      else this.points++
+
+      if (this.points === 381) this.win()
     },
     end () {
       clearInterval(this.timer)
       this.started = false
       this.gameOver = true
+    },
+    win () {
+      clearInterval(this.timer)
+      this.started = false
+      this.winner = true
     },
     reset() {
       clearInterval(this.timer)
@@ -120,7 +134,7 @@ export default {
         value: 0,
         state: 'closed'
       })))
-      this.started = this.gameOver = false
+      this.started = this.gameOver = this.winner = false
     },
     play (x, y) {
       if (this.squares[y][x].state === 'closed') {
@@ -136,40 +150,172 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.game-table {}
+.game-table {
+  border: .1em solid #222;
+  border-radius: .15em;
+  padding: .5em;
+  user-select: none;
+}
 
-.square {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: .5em;
+
+  .bombs,
+  .time,
+  .reset-button {
+    background-color: transparent;
+    border: .1em solid #222;
+    border-radius: .15em;
+    display: flex;
+    align-items: center;
+    font-size: 1.3em;
+    padding: .2em .5em;
+  }
   
-  &.closed {
-    background-color: grey;
-  }
+  .bombs {
+    i {
+      position: relative;
+      display: inline-block;
+      background-color: #222;
+      border-radius: 50%;
+      margin: .25em .5em 0 0;
+      width: .75em;
+      height: .75em;
 
-  &.flag {
-    background-color: blue;
-  }
+      &:before {
+        content: '';
+        display: inline-block;
+        background-color: #222;
+        width: .3em;
+        height: .3em;
+        position: absolute;
+        border-radius: .05em;
+        left: .23em;
+        top: -.08em;
+      }
 
-  &.value-bomb {
-    background-color: red;
+      &:after {
+        content: '';
+        display: inline-block;
+        border: .05em solid transparent;
+        border-top-color: #222;
+        transform: rotate(-45deg);
+        border-radius: 50%;
+        width: .4em;
+        height: .4em;
+        position: absolute;
+        left: .35em;
+        top: -.25em;
+      }
+    }
+  }
+  
+  .time {
+
+    i {
+      display: inline-block;
+      position: relative;
+      border: .1em solid #222;
+      border-radius: 50%;
+      width: 1em;
+      height: 1em;
+      margin-left: .5em;
+
+      &:before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        height: .3em;
+        width: .1em;
+        border-radius: 1em;
+        background-color: #222;
+        left: .35em;
+        top: .15em;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        height: .35em;
+        width: .1em;
+        border-radius: .05em;
+        background-color: #222;
+        left: .47em;
+        top: .34em;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  
+  .reset-button {
+    transition: all .2s ease;
+    cursor: pointer;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      transform: translate3D(-.2em, -.2em, 1em);
+      box-shadow: .2em .2em .2em rgba(0, 0, 0, .5);
+    }
+
+    &:active {
+      transform: none;
+      box-shadow: none;
+    }
   }
 }
 
-.reset-button {
-  background-color: transparent;
-  border: 1px solid black;
-  border-radius: 2px;
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 
-  &:before {
-    content: ':)'
+  @media (min-width: 500px) {
+    flex-direction: column;
+  }
+
+  .row {
+    display: flex;
+    flex: 1 1 auto;
+
+    .square {
+      display: inline-block;
+      width: (100% / 30);
+      height: 1em;
+      
+      &.closed {
+        background-color: grey;
+      }
+
+      &.flag {
+        background-color: blue;
+      }
+
+      &.value-bomb {
+        background-color: red;
+      }
+    }
+  }
+}
+
+.game-status {
+  display: none;
+  position: absolute;
+
+
+  &.gameOver {
+    &:before {
+      content: 'GAME OVER'
+    }
   }
   
-  &.game-over {
-    color: red;
-  
+  &.winner {
     &:before {
-      content: ':('
+      content: 'Você venceu!'
     }
   }
 }

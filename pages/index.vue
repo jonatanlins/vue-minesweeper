@@ -4,7 +4,7 @@
       Minesweeper
     </h1>
 
-    <minesweeper/>
+    <minesweeper class="game"/>
   </section>
 </template>
 
@@ -12,4 +12,9 @@
 export default {}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.game {
+  width: 650px;
+  max-width: 100%;
+}
+</style>
