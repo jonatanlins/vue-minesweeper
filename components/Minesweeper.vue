@@ -39,7 +39,8 @@ export default {
   },
   computed: {
     formattedTime () {
-      return `${Math.floor(this.time / 60)}:${('0' + (this.time % 60)).slice(-2)}`
+      return (Math.floor(this.time / 60) + ':' +
+        ('0' + (this.time % 60)).slice(-2))
     }
   },
   methods: {
@@ -53,6 +54,7 @@ export default {
       bombs.splice(startY * 30 + startX + 29, 3)
       bombs.splice(startY * 30 + startX - 1, 3)
       bombs.splice(startY * 30 + startX - 31, 3)
+
       for (let i = 0; i < 99; i++) {
         const index = Math.floor(Math.random() * bombs.length)
         const bomb = bombs.splice(index, 1)[0]
@@ -84,6 +86,7 @@ export default {
       this.timer = setInterval(() => this.time++, 1000)
       this.discover(startX, startY)
     },
+    
     flag (x, y) {
       if (this.started) {
         if (this.squares[y][x].state === 'closed') {
@@ -95,6 +98,7 @@ export default {
         }
       }
     },
+
     discover (x, y) {
       const open = (x, y) => {
         if(
@@ -117,16 +121,19 @@ export default {
 
       if (this.points === 381) this.win()
     },
+
     end () {
       clearInterval(this.timer)
       this.started = false
       this.gameOver = true
     },
+
     win () {
       clearInterval(this.timer)
       this.started = false
       this.winner = true
     },
+
     reset() {
       clearInterval(this.timer)
       this.time = 0
@@ -136,6 +143,7 @@ export default {
       })))
       this.started = this.gameOver = this.winner = false
     },
+
     play (x, y) {
       if (this.squares[y][x].state === 'closed') {
         if (this.started) {
