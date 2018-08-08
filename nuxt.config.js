@@ -11,7 +11,8 @@ module.exports = {
     ]
   },
   plugins: [
-    { src: '@/plugins/scripts.js' }
+    { src: '@/plugins/scripts.js' },
+    { src: '@/plugins/icons.js' }
   ],
   css: [
     '@/assets/style/main.scss'
