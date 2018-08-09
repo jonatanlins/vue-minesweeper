@@ -4,7 +4,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Réplica de campo minado feita em menos de 24 horas' }
+      { hid: 'description', name: 'description', content: 'Réplica do jogo campo minado' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
