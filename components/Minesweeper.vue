@@ -1,20 +1,34 @@
 <template>
   <div class="game-table" @click.right.prevent="() => {}">
     <div class="header">
-      <span class="bombs"><i/>{{ bombs }}</span>
-      <button class="reset-button" @click="reset"> RESET </button>
-      <span class="time">{{ formattedTime }}<i/></span>
+      <span>
+        <icon class="icon" name="bomb"/>
+        {{ bombs }}
+      </span>
+
+      <button class="reset-button" @click="reset">RESET</button>
+
+      <span>
+        {{ formattedTime }}
+        <icon class="icon" name="clock"/>
+      </span>
     </div>
 
     <div class="grid">
       <div class="row" v-for="(row, y) in squares" :key="y">
-        <div
-          v-for="({ state, value }, x) in row" :key="x"
+        <div v-for="({ state, value }, x) in row" :key="x"
           :class="[ 'square', state === 'open' ? `value-${value}` : state]"
           @click.right.prevent="flag(x, y)"
           @click.left="play(x, y)"
-          v-text="(value > 0 && state === 'open') ? value : ''"
-        />
+        >
+          <icon v-if="state === 'flag'" name="flag"/>
+
+          <template v-if="state === 'open'">
+            {{ (value > 0) ? value : '' }}
+            <icon v-if="value === 'bomb'" name="bomb"/>
+          </template>
+
+        </div>
       </div>
     </div>
 
@@ -34,15 +48,18 @@ export default {
     points: 0,
     winner: false
   }),
+
   mounted () {
     this.reset()
   },
+
   computed: {
     formattedTime () {
       return (Math.floor(this.time / 60) + ':' +
         ('0' + (this.time % 60)).slice(-2))
     }
   },
+
   methods: {
     start (startX, startY) {
       this.started = true
@@ -86,7 +103,7 @@ export default {
       this.timer = setInterval(() => this.time++, 1000)
       this.discover(startX, startY)
     },
-    
+
     flag (x, y) {
       if (this.started) {
         if (this.squares[y][x].state === 'closed') {
@@ -158,9 +175,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$black: #222;
+$medium: 600px;
+$radius: .25em;
+$thickness: 2px;
+
 .game-table {
-  border: .1em solid #222;
-  border-radius: .15em;
+  border: $thickness solid $black;
+  border-radius: $radius;
   padding: .5em;
   user-select: none;
 }
@@ -171,141 +193,78 @@ export default {
   justify-content: space-between;
   margin-bottom: .5em;
 
-  .bombs,
-  .time,
-  .reset-button {
-    background-color: transparent;
-    border: .1em solid #222;
-    border-radius: .15em;
-    display: flex;
-    align-items: center;
+  & > * {
+    border: $thickness solid $black;
+    border-radius: $radius;
     font-size: 1.3em;
     padding: .2em .5em;
   }
-  
-  .bombs {
-    i {
-      position: relative;
-      display: inline-block;
-      background-color: #222;
-      border-radius: 50%;
-      margin: .25em .5em 0 0;
-      width: .75em;
-      height: .75em;
+}
 
-      &:before {
-        content: '';
-        display: inline-block;
-        background-color: #222;
-        width: .3em;
-        height: .3em;
-        position: absolute;
-        border-radius: .05em;
-        left: .23em;
-        top: -.08em;
-      }
+button,
+.btn {
+  border: $thickness solid $black;
+  background-color: transparent;
+  transition: all .2s ease;
+  color: $black;
+  cursor: pointer;
 
-      &:after {
-        content: '';
-        display: inline-block;
-        border: .05em solid transparent;
-        border-top-color: #222;
-        transform: rotate(-45deg);
-        border-radius: 50%;
-        width: .4em;
-        height: .4em;
-        position: absolute;
-        left: .35em;
-        top: -.25em;
-      }
-    }
+  &:hover {
+    box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   }
-  
-  .time {
 
-    i {
-      display: inline-block;
-      position: relative;
-      border: .1em solid #222;
-      border-radius: 50%;
-      width: 1em;
-      height: 1em;
-      margin-left: .5em;
-
-      &:before {
-        content: '';
-        position: absolute;
-        display: inline-block;
-        height: .3em;
-        width: .1em;
-        border-radius: 1em;
-        background-color: #222;
-        left: .35em;
-        top: .15em;
-      }
-
-      &:after {
-        content: '';
-        position: absolute;
-        display: inline-block;
-        height: .35em;
-        width: .1em;
-        border-radius: .05em;
-        background-color: #222;
-        left: .47em;
-        top: .34em;
-        transform: rotate(-45deg);
-      }
-    }
-  }
-  
-  .reset-button {
-    transition: all .2s ease;
-    cursor: pointer;
-    outline: none;
-
-    &:hover,
-    &:focus {
-      transform: translate3D(-.2em, -.2em, 1em);
-      box-shadow: .2em .2em .2em rgba(0, 0, 0, .5);
-    }
-
-    &:active {
-      transform: none;
-      box-shadow: none;
-    }
+  &:active {
+    transform: none;
+    box-shadow: none;
   }
 }
 
 .grid {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
 
-  @media (min-width: 500px) {
+  @media (min-width: $medium) {
     flex-direction: column;
   }
 
   .row {
     display: flex;
-    flex: 1 1 auto;
+    flex: 0 0 (100% / 16);
+    flex-direction: column;
+
+    @media (min-width: $medium) {
+      flex-direction: row;
+    }
 
     .square {
-      display: inline-block;
-      width: (100% / 30);
-      height: 1em;
+      display: flex;
+      flex: 0 0 (90% / 30);
+      align-items: center;
+      justify-content: center;
+      min-height: 1em;
+      font-size: 100%;
+      border-radius: $radius;
+      box-sizing: border-box;
+      margin: 5%;
+
+      @media (min-width: $medium) {
+        margin: (5% / 30);
+      }
+
+      &:before {
+        content: '';
+        float: left;
+        padding-top: 100%;
+      }
       
       &.closed {
-        background-color: grey;
+        @extend .btn;
+        border: $thickness solid $black;
       }
 
-      &.flag {
-        background-color: blue;
-      }
+      &.flag {}
 
-      &.value-bomb {
-        background-color: red;
-      }
+      &.value-bomb {}
     }
   }
 }

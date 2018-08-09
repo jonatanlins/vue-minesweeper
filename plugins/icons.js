@@ -1,12 +1,8 @@
 import Vue from 'vue'
 import IconComponent from 'vue-awesome/components/Icon'
 
-const icons = [
-  'flag'
-]
-
-for (const icon of icons) {
-  require('vue-awesome/icons/' + icon)
-}
+import 'vue-awesome/icons/flag'
+import 'vue-awesome/icons/bomb'
+import 'vue-awesome/icons/clock'
 
 Vue.component('icon', IconComponent)
