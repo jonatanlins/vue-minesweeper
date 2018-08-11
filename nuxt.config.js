@@ -1,6 +1,7 @@
 module.exports = {
   head: {
     title: 'minesweeper',
+    htmlAttrs: { lang: 'pt-br' },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
