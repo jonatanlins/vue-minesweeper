@@ -1,5 +1,7 @@
 # minesweeper
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jonatanlins/vue-minesweeper.svg)](https://greenkeeper.io/)
+
 > Réplica do jogo campo minado
 
 ## Comandos de terminal
