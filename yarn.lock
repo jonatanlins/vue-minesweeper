@@ -673,30 +673,7 @@
     which "^6.0.1"
     ws "^8.22.0"
 
-"@nuxt/kit@4.6.3":
-  version "4.6.3"
-  resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-4.6.3.tgz#b3ec1667c9a7822d2d252508aa5535ad2d486e5f"
-  dependencies:
-    consola "^3.4.2"
-    defu "^6.1.7"
-    destr "^2.0.5"
-    errx "^0.2.2"
-    exsolve "^1.1.3"
-    ignore "^7.0.14"
-    klona "^2.0.6"
-    microdiff "^1.6.0"
-    nostics "^1.3.0"
-    package-manager-detector "^1.9.0"
-    pathe "^2.0.3"
-    rc9 "^3.1.0"
-    scule "^1.3.0"
-    std-env "^4.3.0"
-    tinyexec "^1.3.1"
-    tinyglobby "^0.2.17"
-    unctx "^3.0.1"
-    verkit "^0.5.0"
-
-"@nuxt/kit@^4.6.1", "@nuxt/kit@^4.6.4":
+"@nuxt/kit@4.6.4", "@nuxt/kit@^4.6.1", "@nuxt/kit@^4.6.4":
   version "4.6.4"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-4.6.4.tgz#d33b4fcb063af56f4e0f607ef77485b7e2a191de"
   dependencies:
@@ -719,11 +696,11 @@
     unctx "^3.0.1"
     verkit "^0.5.0"
 
-"@nuxt/nitro-server@4.6.3":
-  version "4.6.3"
-  resolved "https://registry.yarnpkg.com/@nuxt/nitro-server/-/nitro-server-4.6.3.tgz#ec2d9434719c1d80d92851fc7fbbb0d784ecfd02"
+"@nuxt/nitro-server@4.6.4":
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/@nuxt/nitro-server/-/nitro-server-4.6.4.tgz#f00bfd555d5a8b7ccc65bcf29229678f3b97be6d"
   dependencies:
-    "@nuxt/kit" "4.6.3"
+    "@nuxt/kit" "4.6.4"
     "@unhead/vue" "^3.4.3"
     consola "^3.4.2"
     defu "^6.1.7"
@@ -731,14 +708,14 @@
     devalue "^6.0.3"
     errx "^0.2.2"
     escape-string-regexp "^5.0.0"
-    exsolve "^1.1.3"
+    exsolve "^1.2.0"
     flru "^1.0.2"
     h3 "^1.15.11"
     impound "^1.2.1"
     klona "^2.0.6"
     mocked-exports "^0.1.1"
     my-bad "^0.2.11"
-    nitropack "^2.13.5"
+    nitropack "^2.13.6"
     nostics "^1.3.0"
     ohash "^2.0.12"
     pathe "^2.0.3"
@@ -747,15 +724,15 @@
     std-env "^4.3.0"
     ufo "^1.6.4"
     unctx "^3.0.1"
-    unrouting "^0.3.1"
+    unrouting "^0.3.2"
     unstorage "^1.17.5"
     vue "^3.5.44"
     vue-bundle-renderer "^2.4.0"
     vue-devtools-stub "^0.1.0"
 
-"@nuxt/schema@4.6.3":
-  version "4.6.3"
-  resolved "https://registry.yarnpkg.com/@nuxt/schema/-/schema-4.6.3.tgz#1db3acb1ac819d946ecaeb9f5fcf95b3089b760d"
+"@nuxt/schema@4.6.4":
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/@nuxt/schema/-/schema-4.6.4.tgz#6d7fb9b56a72df33dc031c39cb82d954c07aff66"
   dependencies:
     "@vue/shared" "^3.5.44"
     defu "^6.1.7"
@@ -773,20 +750,20 @@
     rc9 "^3.0.1"
     std-env "^4.2.0"
 
-"@nuxt/vite-builder@4.6.3":
-  version "4.6.3"
-  resolved "https://registry.yarnpkg.com/@nuxt/vite-builder/-/vite-builder-4.6.3.tgz#2ba0111a5368a8a0d152a58aeed50087ebce0e26"
+"@nuxt/vite-builder@4.6.4":
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/@nuxt/vite-builder/-/vite-builder-4.6.4.tgz#dc6955927bf43aef51f70c6534395c39ca6262fa"
   dependencies:
-    "@nuxt/kit" "4.6.3"
+    "@nuxt/kit" "4.6.4"
     "@vitejs/plugin-vue" "^6.0.10"
     "@vitejs/plugin-vue-jsx" "^5.1.6"
-    autoprefixer "^10.6.1"
+    autoprefixer "^10.6.2"
     clickable-path "^0.1.1"
     consola "^3.4.2"
     cssnano "^9.9.0"
     defu "^6.1.7"
     escape-string-regexp "^5.0.0"
-    exsolve "^1.1.3"
+    exsolve "^1.2.0"
     generic-names "^4.0.0"
     get-port-please "^3.2.0"
     js-tokens "^10.0.0"
@@ -795,9 +772,9 @@
     my-bad "^0.2.11"
     pathe "^2.0.3"
     pkg-types "^2.4.0"
-    postcss "^8.5.31"
+    postcss "^8.5.32"
     rolldown-string "^0.3.1"
-    seroval "^1.7.2"
+    seroval "^1.7.6"
     std-env "^4.3.0"
     ufo "^1.6.4"
     unenv "^2.0.0-rc.24"
@@ -806,14 +783,14 @@
     vite-plugin-checker "^0.14.5"
     vue-bundle-renderer "^2.4.0"
 
-"@nuxt/vite-server@4.6.3":
-  version "4.6.3"
-  resolved "https://registry.yarnpkg.com/@nuxt/vite-server/-/vite-server-4.6.3.tgz#883138646efaed07c80dca804d4aa880e5282828"
+"@nuxt/vite-server@4.6.4":
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/@nuxt/vite-server/-/vite-server-4.6.4.tgz#610b88def94032caf806bc43d60a83b816921087"
   dependencies:
-    "@nuxt/kit" "4.6.3"
+    "@nuxt/kit" "4.6.4"
     clickable-path "^0.1.1"
     defu "^6.1.7"
-    exsolve "^1.1.3"
+    exsolve "^1.2.0"
     mocked-exports "^0.1.1"
     my-bad "^0.2.11"
     pathe "^2.0.3"
@@ -1579,12 +1556,12 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
-autoprefixer@^10.6.1:
-  version "10.6.2"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.6.2.tgz#70c438dbc7fbc25c27c084eb1109650de564fe21"
+autoprefixer@^10.6.2:
+  version "10.7.0"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.7.0.tgz#6442e6e00b7c6f34f60380103ec663e057f06ac8"
   dependencies:
-    browserslist "^4.28.9"
-    caniuse-lite "^1.0.30001810"
+    browserslist "^4.29.6"
+    caniuse-lite "^1.0.30001826"
     fraction.js "^5.3.4"
     picocolors "^1.1.1"
     postcss-value-parser "^4.2.0"
@@ -1677,6 +1654,10 @@ baseline-browser-mapping@^2.11.33:
   version "2.11.37"
   resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.11.37.tgz#a6170da13a37d1423bec6e99bcd7889a9db77036"
 
+baseline-browser-mapping@^2.11.37:
+  version "2.11.39"
+  resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.11.39.tgz#4e99c4845e0c2100b6b1ef189bce3643d11e604e"
+
 bcrypt-pbkdf@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.2.tgz#a4301d389b6a43f9b67ff3ca11a3f6637e360e9e"
@@ -1734,7 +1715,7 @@ braces@^3.0.3:
   dependencies:
     fill-range "^7.1.1"
 
-browserslist@^4.0.0, browserslist@^4.24.0, browserslist@^4.28.9, browserslist@^4.29.3:
+browserslist@^4.0.0, browserslist@^4.24.0, browserslist@^4.29.3:
   version "4.29.5"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.29.5.tgz#e835ff9a00f683305b33f02828c908b397410d4a"
   dependencies:
@@ -1743,6 +1724,16 @@ browserslist@^4.0.0, browserslist@^4.24.0, browserslist@^4.28.9, browserslist@^4
     electron-to-chromium "^1.5.464"
     node-releases "^2.0.60"
     update-browserslist-db "^1.3.4"
+
+browserslist@^4.29.6:
+  version "4.29.6"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.29.6.tgz#1a1873937c88f82aca6d0ae6ebba262d971a3b16"
+  dependencies:
+    baseline-browser-mapping "^2.11.37"
+    caniuse-lite "^1.0.30001826"
+    electron-to-chromium "^1.5.486"
+    node-releases "^2.0.64"
+    update-browserslist-db "^1.4.0"
 
 buffer-crc32@^1.0.0:
   version "1.0.0"
@@ -1873,7 +1864,7 @@ caniuse-lite@^1.0.0:
   version "1.0.30000865"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000865.tgz#70026616e8afe6e1442f8bb4e1092987d81a2f25"
 
-caniuse-lite@^1.0.30001810, caniuse-lite@^1.0.30001819:
+caniuse-lite@^1.0.30001819, caniuse-lite@^1.0.30001826:
   version "1.0.30001826"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001826.tgz#6c2cc43e4858e54d6f7200fa87b4de93cb39aa77"
 
@@ -2349,6 +2340,10 @@ ee-first@1.1.1:
 electron-to-chromium@^1.5.464:
   version "1.5.486"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.486.tgz#8d46dcbd2ec08d98ffd67af164f38f58ff1238da"
+
+electron-to-chromium@^1.5.486:
+  version "1.5.492"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.492.tgz#bd63a064a6ab036db630af5dfe83f4533de7cbf0"
 
 emoji-regex@^10.3.0:
   version "10.6.0"
@@ -3962,7 +3957,7 @@ magic-string@^0.30.19, magic-string@^0.30.21, magic-string@^0.30.3:
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.5.5"
 
-magic-string@^1.0.0, magic-string@^1.2.0, magic-string@^1.2.3, magic-string@^1.3.1, magic-string@^1.4.3, magic-string@^1.4.5:
+magic-string@^1.0.0, magic-string@^1.2.0, magic-string@^1.2.3, magic-string@^1.3.1, magic-string@^1.4.5:
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-1.4.5.tgz#201c852d51eb0664d6f66cf7ab93b20b416e48d9"
   dependencies:
@@ -4312,7 +4307,7 @@ neo-async@^2.5.0:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.1.tgz#acb909e327b1e87ec9ef15f41b8a269512ad41ee"
 
-nitropack@^2.13.5:
+nitropack@^2.13.6:
   version "2.13.6"
   resolved "https://registry.yarnpkg.com/nitropack/-/nitropack-2.13.6.tgz#d4bce1ced3527418c22da3982b9fc3ba17b39d84"
   dependencies:
@@ -4428,6 +4423,10 @@ node-releases@^2.0.60:
   version "2.0.64"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.64.tgz#f98f49ee9592be46c78780a5246e3b2c8b8d6f4d"
 
+node-releases@^2.0.64:
+  version "2.0.65"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.65.tgz#8937f0f215e572b35c1dc83f8c6ec61cafccb9f8"
+
 node-sass@^9.0.0:
   version "9.0.0"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-9.0.0.tgz#c21cd17bd9379c2d09362b3baf2cbf089bce08ed"
@@ -4516,21 +4515,21 @@ npmlog@^6.0.0:
     gauge "^4.0.3"
     set-blocking "^2.0.0"
 
-nuxt@^4.6.3:
-  version "4.6.3"
-  resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-4.6.3.tgz#d56118815db0c0cc8b337df8b960c2a883c8666f"
+nuxt@^4.6.4:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-4.6.4.tgz#935dde66a85a66f027779ecd2a08fc9c9e855942"
   dependencies:
     "@dxup/nuxt" "^0.5.10"
     "@jridgewell/trace-mapping" "^0.3.31"
     "@nuxt/cli" "^4.0.1"
     "@nuxt/devalue" "^2.0.2"
     "@nuxt/devtools" "^3.4.4"
-    "@nuxt/kit" "4.6.3"
-    "@nuxt/nitro-server" "4.6.3"
-    "@nuxt/schema" "4.6.3"
+    "@nuxt/kit" "4.6.4"
+    "@nuxt/nitro-server" "4.6.4"
+    "@nuxt/schema" "4.6.4"
     "@nuxt/telemetry" "^2.9.1"
-    "@nuxt/vite-builder" "4.6.3"
-    "@nuxt/vite-server" "4.6.3"
+    "@nuxt/vite-builder" "4.6.4"
+    "@nuxt/vite-server" "4.6.4"
     "@unhead/vue" "^3.4.3"
     "@vue/shared" "^3.5.44"
     chokidar "^5.0.0"
@@ -4543,7 +4542,7 @@ nuxt@^4.6.3:
     devalue "^6.0.3"
     errx "^0.2.2"
     escape-string-regexp "^5.0.0"
-    exsolve "^1.1.3"
+    exsolve "^1.2.0"
     fetchdts "^0.2.0"
     fnv1a-64 "^0.1.2"
     hookable "^6.1.2"
@@ -4553,7 +4552,7 @@ nuxt@^4.6.3:
     jiti "^2.7.0"
     klona "^2.0.6"
     knitwork "^1.3.0"
-    magic-string "^1.4.3"
+    magic-string "^1.4.5"
     my-bad "^0.2.11"
     nanotar "^0.3.0"
     nostics "^1.3.0"
@@ -4578,13 +4577,13 @@ nuxt@^4.6.3:
     undici "^8.12.3"
     unhead "^3.4.3"
     unimport "^7.0.2"
-    unplugin "^3.4.0"
-    unrouting "^0.3.1"
+    unplugin "^3.7.0"
+    unrouting "^0.3.2"
     untyped "^2.0.0"
     verkit "^0.5.0"
     vue "^3.5.44"
     vue-bundle-renderer "^2.4.0"
-    vue-component-type-helpers "^3.3.13"
+    vue-component-type-helpers "^3.3.14"
     vue-router "^5.4.0"
 
 oauth-sign@~0.9.0:
@@ -4903,7 +4902,7 @@ postcss-value-parser@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
 
-postcss@^8.5.31, postcss@^8.5.32:
+postcss@^8.5.32:
   version "8.5.33"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.33.tgz#088a2fee1bdee7ea1ffaf8abb4288513e7097ab0"
   dependencies:
@@ -5389,9 +5388,9 @@ serialize-javascript@^7.0.3:
   version "7.1.4"
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-7.1.4.tgz#477af55bdec0d831fa3b209245f673217fd27380"
 
-seroval@^1.7.2:
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/seroval/-/seroval-1.8.1.tgz#3ca6d1c9c0b34a3ad530dc15e36c70864fe4a89a"
+seroval@^1.7.6:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/seroval/-/seroval-1.8.2.tgz#d451ae2866501ecdef3c8ff793acdea85fccd69c"
 
 serve-placeholder@^2.0.2:
   version "2.0.2"
@@ -6115,7 +6114,7 @@ unplugin@^2.3.11:
     picomatch "^4.0.3"
     webpack-virtual-modules "^0.6.2"
 
-unplugin@^3.0.0, unplugin@^3.3.0, unplugin@^3.4.0, unplugin@^3.7.0:
+unplugin@^3.0.0, unplugin@^3.3.0, unplugin@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/unplugin/-/unplugin-3.7.0.tgz#d3780c9c0f886fd84ea3a3ae961210cf8545f256"
   dependencies:
@@ -6124,7 +6123,7 @@ unplugin@^3.0.0, unplugin@^3.3.0, unplugin@^3.4.0, unplugin@^3.7.0:
     picomatch "^4.0.7"
     webpack-virtual-modules "^0.6.2"
 
-unrouting@^0.3.1:
+unrouting@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/unrouting/-/unrouting-0.3.2.tgz#9846788be31bad613f133eff492bee596e0bc706"
   dependencies:
@@ -6172,6 +6171,13 @@ unwasm@^0.5.3:
 update-browserslist-db@^1.3.4:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/update-browserslist-db/-/update-browserslist-db-1.3.4.tgz#e8bd4596f6900805f9f12c5a5200c83c59c38faf"
+  dependencies:
+    escalade "^3.2.0"
+    picocolors "^1.1.1"
+
+update-browserslist-db@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/update-browserslist-db/-/update-browserslist-db-1.4.0.tgz#2b03b1089585b595fd2c38a9c021c0e40a441633"
   dependencies:
     escalade "^3.2.0"
     picocolors "^1.1.1"
@@ -6292,7 +6298,7 @@ vue-bundle-renderer@^2.4.0:
   dependencies:
     ufo "^1.6.4"
 
-vue-component-type-helpers@^3.3.13:
+vue-component-type-helpers@^3.3.14:
   version "3.3.14"
   resolved "https://registry.yarnpkg.com/vue-component-type-helpers/-/vue-component-type-helpers-3.3.14.tgz#2cae80380617266696a33ffd8455455486894090"
 
